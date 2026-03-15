@@ -1,0 +1,15 @@
+[package]
+name = "deny_public_fields_tests"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[lib]
+path = "lib.rs"
+test = false
+
+[dependencies]
+deny_public_fields = { package = "servo-deny-public-fields", path = "../../../components/deny_public_fields"}

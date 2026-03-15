@@ -1,0 +1,20 @@
+[package]
+name = "script_tests"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[lib]
+name = "script_tests"
+path = "lib.rs"
+
+[dependencies]
+base = { workspace = true }
+encoding_rs = { workspace = true }
+euclid = { workspace = true }
+keyboard-types = { workspace = true }
+script = { package = "servo-script", path = "../../../components/script"}
+servo_url = { package = "servo-url", path = "../../../components/url"}
