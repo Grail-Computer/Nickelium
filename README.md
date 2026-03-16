@@ -64,29 +64,29 @@ This is the workload Nickelium is currently best at: deterministic admin actions
 Plain DOM workflow latency (lower is better):
 
 ```text
-Nickelium                [#########################...] 1672 ms
-Chrome + agent-browser   [############################] 1893 ms
+Nickelium                ████████████████████████████████░░░░  1672 ms  ★
+Chrome + agent-browser   ████████████████████████████████████  1893 ms
 ```
 
 Plain DOM workflow peak RSS (lower is better):
 
 ```text
-Nickelium                [#####.......................] 172 MB
-Chrome + agent-browser   [############################] 1004 MB
+Nickelium                ██████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  172 MB  ★
+Chrome + agent-browser   ████████████████████████████████████  1004 MB
 ```
 
 Heavy DOM workflow latency (lower is better):
 
 ```text
-Nickelium                [#########################...] 1742 ms
-Chrome + agent-browser   [############################] 1985 ms
+Nickelium                ████████████████████████████████░░░░  1742 ms  ★
+Chrome + agent-browser   ████████████████████████████████████  1985 ms
 ```
 
 Heavy DOM workflow peak RSS (lower is better):
 
 ```text
-Nickelium                [###.........................] 172 MB
-Chrome + agent-browser   [############################] 1545 MB
+Nickelium                ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  172 MB  ★
+Chrome + agent-browser   ████████████████████████████████████  1545 MB
 ```
 
 What this means:
@@ -102,29 +102,29 @@ When the workload demands proof screenshots immediately after navigation and ren
 Approval workflow + proof screenshot latency (lower is better):
 
 ```text
-Nickelium                [############################] 3731 ms
-Chrome + agent-browser   [###########.................] 1483 ms
+Nickelium                ████████████████████████████████████  3731 ms
+Chrome + agent-browser   ██████████████░░░░░░░░░░░░░░░░░░░░░░  1483 ms  ★
 ```
 
 Approval workflow + proof screenshot peak RSS (lower is better):
 
 ```text
-Nickelium                [############................] 677 MB
-Chrome + agent-browser   [############################] 1554 MB
+Nickelium                ████████████████░░░░░░░░░░░░░░░░░░░░  677 MB  ★
+Chrome + agent-browser   ████████████████████████████████████  1554 MB
 ```
 
 Dashboard audit + proof screenshot latency (lower is better):
 
 ```text
-Nickelium                [############################] 3713 ms
-Chrome + agent-browser   [#########...................] 1190 ms
+Nickelium                ████████████████████████████████████  3713 ms
+Chrome + agent-browser   ████████████░░░░░░░░░░░░░░░░░░░░░░░░  1190 ms  ★
 ```
 
 Dashboard audit + proof screenshot peak RSS (lower is better):
 
 ```text
-Nickelium                [############................] 642 MB
-Chrome + agent-browser   [############################] 1498 MB
+Nickelium                ███████████████░░░░░░░░░░░░░░░░░░░░░  642 MB  ★
+Chrome + agent-browser   ████████████████████████████████████  1498 MB
 ```
 
 What this means:
@@ -138,8 +138,8 @@ What this means:
 Across the recorded workflows above, Nickelium stayed in a single browser process while the Chrome stack expanded to nine:
 
 ```text
-Nickelium                [###.........................] 1 proc
-Chrome + agent-browser   [############################] 9 proc
+Nickelium                ████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  1 proc  ★
+Chrome + agent-browser   ████████████████████████████████████  9 proc
 ```
 
 ### Takeaway
