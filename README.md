@@ -1,7 +1,7 @@
 # Nickelium
 
 <p align="center">
-  <img src="assets/nickelium-logo.svg" width="260" alt="Nickelium logo">
+  <img src="assets/nickelium.png" width="260" alt="Nickelium logo">
 </p>
 
 Nickelium is an agent-first browser runtime built on top of [Servo](https://github.com/servo/servo).
