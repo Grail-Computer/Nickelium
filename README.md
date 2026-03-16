@@ -47,14 +47,108 @@ It is not the right tool for media-heavy consumer browsing, visual polish review
 
 ## Benchmark snapshot
 
-On the current synthetic admin workloads used during development, Nickelium cut memory substantially against [`agent-browser`](https://github.com/vercel-labs/agent-browser) on top of Chrome:
+These figures come from the local synthetic admin/dashboard workflows used during development. They compare Nickelium against [`agent-browser`](https://github.com/vercel-labs/agent-browser) on top of Chrome on the same Mac.
 
-| Workload | Nickelium | agent-browser + Chrome |
-| --- | --- | --- |
-| Approval workflow + screenshot | 693 MB peak RSS, 1 process | 1.59 GB peak RSS, 9 processes |
-| Dashboard extraction + screenshot | 658 MB peak RSS, 1 process | 1.53 GB peak RSS, 9 processes |
+Notes:
 
-The bigger latency story is narrower: Nickelium's native path is faster on warm, DOM-ready extraction work, while screenshot-heavy flows still need more optimization.
+- latency = end-to-end elapsed workflow time
+- memory = peak RSS of the browser stack
+- process count = peak browser process count during the run
+- bars are normalized within each chart
+- these are workload-specific development benchmarks, not general web benchmarks
+
+### Batched DOM-first workflows
+
+This is the workload Nickelium is currently best at: deterministic admin actions where the agent can batch DOM work and does not need full consumer-browser fidelity.
+
+Plain DOM workflow latency (lower is better):
+
+```text
+Nickelium                [#########################...] 1672 ms
+Chrome + agent-browser   [############################] 1893 ms
+```
+
+Plain DOM workflow peak RSS (lower is better):
+
+```text
+Nickelium                [#####.......................] 172 MB
+Chrome + agent-browser   [############################] 1004 MB
+```
+
+Heavy DOM workflow latency (lower is better):
+
+```text
+Nickelium                [#########################...] 1742 ms
+Chrome + agent-browser   [############################] 1985 ms
+```
+
+Heavy DOM workflow peak RSS (lower is better):
+
+```text
+Nickelium                [###.........................] 172 MB
+Chrome + agent-browser   [############################] 1545 MB
+```
+
+What this means:
+
+- On the plain batched workflow, Nickelium was `11.7%` faster and used `82.8%` less peak RSS.
+- On the heavy batched workflow, Nickelium was `12.2%` faster and used `88.9%` less peak RSS.
+- This is the sharpest current Nickelium win: DOM-first, batchable back-office work.
+
+### Screenshot-heavy proof workflows
+
+When the workload demands proof screenshots immediately after navigation and rendering, Nickelium still wins on memory, but not yet on elapsed time.
+
+Approval workflow + proof screenshot latency (lower is better):
+
+```text
+Nickelium                [############################] 3731 ms
+Chrome + agent-browser   [###########.................] 1483 ms
+```
+
+Approval workflow + proof screenshot peak RSS (lower is better):
+
+```text
+Nickelium                [############................] 677 MB
+Chrome + agent-browser   [############################] 1554 MB
+```
+
+Dashboard audit + proof screenshot latency (lower is better):
+
+```text
+Nickelium                [############################] 3713 ms
+Chrome + agent-browser   [#########...................] 1190 ms
+```
+
+Dashboard audit + proof screenshot peak RSS (lower is better):
+
+```text
+Nickelium                [############................] 642 MB
+Chrome + agent-browser   [############################] 1498 MB
+```
+
+What this means:
+
+- On the approval proof flow, Nickelium used `56.4%` less peak RSS, but Chrome finished faster.
+- On the dashboard proof flow, Nickelium used `57.1%` less peak RSS, but Chrome finished faster.
+- The current weak point is screenshot-heavy, render-dominated work right after navigation.
+
+### Process count
+
+Across the recorded workflows above, Nickelium stayed in a single browser process while the Chrome stack expanded to nine:
+
+```text
+Nickelium                [###.........................] 1 proc
+Chrome + agent-browser   [############################] 9 proc
+```
+
+### Takeaway
+
+Nickelium is not a universal “faster than Chrome” claim. The current read is more specific:
+
+- Nickelium already wins on both time and memory for batched DOM-first agent workflows.
+- Nickelium already wins decisively on memory and process density across the board.
+- Nickelium still needs more work on screenshot-heavy, render-dominated flows.
 
 ## Install
 
