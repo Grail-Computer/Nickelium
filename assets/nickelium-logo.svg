@@ -2,22 +2,21 @@
   <title id="title">Nickelium logo</title>
   <desc id="desc">Nickelium wordmark on a dark background.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3a3a3a"/>
-      <stop offset="100%" stop-color="#1f1f1f"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="440" y2="193" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b3b3b"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
     </linearGradient>
-    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="metal" x1="48" y1="48" x2="348" y2="136" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#d8d8d8"/>
+      <stop offset="100%" stop-color="#dddddd"/>
     </linearGradient>
     <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="2.5" stdDeviation="2" flood-color="#000000" flood-opacity="0.24"/>
     </filter>
   </defs>
-  <rect width="440" height="193" rx="14" fill="url(#bg)"/>
+  <rect width="440" height="193" fill="url(#bg)"/>
   <g filter="url(#shadow)">
-    <path fill="url(#metal)" d="M49 48h17l48 48V48h19v96h-17L68 96v48H49z"/>
-    <path fill="url(#metal)" d="M96 48h18v31l-18 18z"/>
-    <text x="132" y="118" fill="url(#metal)" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="800" letter-spacing="-2">ickelium</text>
+    <path fill="url(#metal)" d="M43 122V53h18l46 46V53l18-26v95h-18L61 76v46z"/>
+    <text x="114" y="132" fill="url(#metal)" font-family="Helvetica, Arial, sans-serif" font-size="86" font-weight="800" letter-spacing="-3">ickelium</text>
   </g>
 </svg>
