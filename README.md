@@ -1,5 +1,9 @@
 # Nickelium
 
+<p align="center">
+  <img src="assets/nickelium-logo.svg" width="260" alt="Nickelium logo">
+</p>
+
 Nickelium is an agent-first browser runtime built on top of Servo.
 
 It is not trying to be a better general-purpose human browser than Chrome. The point is narrower and more useful: give AI agents a browser they can drive natively, tune per task, and run in parallel without paying the full cost of a consumer browser stack every time.

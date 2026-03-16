@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 862 859" role="img" aria-labelledby="title desc">
+  <title id="title">Nickelium logo</title>
+  <desc id="desc">A periodic-table-inspired nickel tile with Ni, Nickel, atomic number 28, electron configuration 3d8 4s2, and atomic mass 58.693.</desc>
+  <rect width="862" height="859" fill="#ffffff"/>
+  <rect x="23" y="35" width="776" height="776" rx="79" fill="#ffc60a" stroke="#000000" stroke-width="13"/>
+  <rect x="49" y="61" width="724" height="724" rx="63" fill="none" stroke="#000000" stroke-width="13"/>
+  <g fill="#000000" font-family="Inter, Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="135" y="177" font-size="86" font-weight="700">28</text>
+    <text x="627" y="183" font-size="84" font-weight="700">
+      3d<tspan dy="-28" font-size="42">8</tspan><tspan dy="28"/>
+      4s<tspan dy="-28" font-size="42">2</tspan>
+    </text>
+    <text x="430" y="507" font-size="248" font-weight="700">Ni</text>
+    <text x="432" y="650" font-size="124" font-weight="700">Nickel</text>
+    <text x="430" y="777" font-size="82" font-weight="700">58.693</text>
+  </g>
+</svg>
