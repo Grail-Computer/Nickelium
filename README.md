@@ -4,7 +4,7 @@
   <img src="assets/nickelium-logo.svg" width="260" alt="Nickelium logo">
 </p>
 
-Nickelium is an agent-first browser runtime built on top of Servo.
+Nickelium is an agent-first browser runtime built on top of [Servo](https://github.com/servo/servo).
 
 It is not trying to be a better general-purpose human browser than Chrome. The point is narrower and more useful: give AI agents a browser they can drive natively, tune per task, and run in parallel without paying the full cost of a consumer browser stack every time.
 
@@ -47,7 +47,7 @@ It is not the right tool for media-heavy consumer browsing, visual polish review
 
 ## Benchmark snapshot
 
-On the current synthetic admin workloads used during development, Nickelium cut memory substantially against `agent-browser` on top of Chrome:
+On the current synthetic admin workloads used during development, Nickelium cut memory substantially against [`agent-browser`](https://github.com/vercel-labs/agent-browser) on top of Chrome:
 
 | Workload | Nickelium | agent-browser + Chrome |
 | --- | --- | --- |
@@ -142,6 +142,15 @@ The current product thesis is:
 
 > Nickelium is a low-overhead browser runtime for agents doing authenticated SaaS and admin work, with DOM-first control and proof screenshots.
 
-## Upstream and license
+## Upstream, inspiration, and license
 
-Nickelium is derived from [Servo](https://github.com/servo/servo) and keeps the Servo codebase structure. See [LICENSE](LICENSE) for licensing terms.
+Nickelium is built from and derived from [servo/servo](https://github.com/servo/servo), and it keeps the Servo codebase structure.
+
+The agent-control direction was also informed by [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser), especially as a reference point for what an agent-first browser workflow can look like on top of Chrome.
+
+Credit where it is due:
+
+- [servo/servo](https://github.com/servo/servo) for the browser engine and upstream foundation
+- [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) for pushing the agent-browser UX forward
+
+See [LICENSE](LICENSE) for licensing terms.
